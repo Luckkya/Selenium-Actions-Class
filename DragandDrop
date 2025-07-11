@@ -1,0 +1,27 @@
+package ActionsClass;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DragandDrop {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://demo.automationtesting.in/Static.html");
+		
+		Actions DD = new Actions(driver);
+		
+		WebElement drag = driver.findElement(By.id("angular"));
+		WebElement drop = driver.findElement(By.id("droparea"));
+		
+		DD.dragAndDrop(drag, drop).perform();
+		Thread.sleep(5000);
+				
+		driver.quit();
+	}
+
+}
