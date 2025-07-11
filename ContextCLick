@@ -1,0 +1,27 @@
+package ActionsClass;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ContextCLick {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://vinothqaacademy.com/mouse-event/");
+		
+		Actions rightclick = new Actions(driver);
+		
+		WebElement button = driver.findElement(By.id("rightclick"));
+		rightclick.contextClick(button).perform();
+		
+		System.out.println(driver.findElement(By.linkText("Registration Form")).getText());
+		
+		driver.quit();	
+
+	}
+
+}
